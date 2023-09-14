@@ -1,0 +1,11 @@
+[33mcommit 1dea12bb4453a024c0f5df83bdf51fc408db9ed9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: herickaquino1 <rherickaquino18@gmail.com>
+Date:   Wed Sep 13 23:34:03 2023 -0300
+
+    Criação do metodo passarTreino na classe Ficha e conclusão do metodo imprimirFicha também na classe Ficha
+
+[33mcommit c2d16c21cf291fdb17f23051dd2becad3a0b599d[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: herickaquino1 <rherickaquino18@gmail.com>
+Date:   Wed Sep 13 12:09:42 2023 -0300
+
+    Primeira versão do projeto

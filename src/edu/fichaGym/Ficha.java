@@ -19,7 +19,6 @@ public class Ficha {
 		 System.out.println("Objetivo: "+atleta.getObjetivo());
 		 System.out.println("=============TREINO===============");
 		 for(int n = 0; n < listaExercicio.length; n++) {
-			 listaExercicio[n] = new Exercicio();
 			 System.out.println("-----"+listaExercicio[n].getNomeExercicio()+"------");
 			 System.out.println("Numero de series: "+listaExercicio[n].getNumeroSeries());
 			 System.out.println("Numero de repetições: "+listaExercicio[n].getNumeroRepeticao());
@@ -41,7 +40,7 @@ public class Ficha {
 			System.out.println("Numero de series: ");
 			listaExercicio[n].setNumeroSeries(sca.nextInt());
 			
-			System.out.println("Numero de series: ");
+			System.out.println("Numero de repeticão: ");
 			listaExercicio[n].setNumeroRepeticao(sca.nextInt());
 			
 		}
