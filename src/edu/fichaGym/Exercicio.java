@@ -4,12 +4,7 @@ public class Exercicio {
 	private String nomeExercicio;
 	private int numeroSeries;
 	private int numeroRepeticao;
-	
-	public Exercicio(String nomeExercicio, int numeroSeries, int numeroRepeticao) {
-		this.nomeExercicio = nomeExercicio;
-		this.numeroSeries = numeroSeries;
-		this.numeroRepeticao = numeroRepeticao;
-	}
+
 
 	public String getNomeExercicio() {
 		return nomeExercicio;
