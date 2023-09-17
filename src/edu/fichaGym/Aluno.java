@@ -4,6 +4,7 @@ public class Aluno extends Pessoa {
 	private double altura;
 	private double peso;
 	private String objetivo;
+	private double imc;
 
 	public Aluno(String nome, String cpf, String email, double altura, double peso, String objetivo) {
 		super(nome, cpf, email);
@@ -35,6 +36,12 @@ public class Aluno extends Pessoa {
 
 	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
+	}
+	public double getImc() {
+		return this.imc;
+	}
+	public void setImc(double imc) {
+		this.imc = imc;
 	}
 	
 	
