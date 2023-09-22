@@ -9,7 +9,6 @@ public class App {
 		Ficha treino = new Ficha();
 		treino.setAtleta(aluno1);
 		treino.setPersonal(professor1);
-		treino.calcularImc();
 		treino.passarTreino();
 		treino.imprimirFicha();
 	}

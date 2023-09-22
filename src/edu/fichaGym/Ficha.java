@@ -17,6 +17,7 @@ public class Ficha {
 		 System.out.println("Altura: "+atleta.getAltura());
 		 System.out.println("Peso: "+atleta.getPeso());
 		 System.out.println("Objetivo: "+atleta.getObjetivo());
+		 atleta.setImc(calcularImc());
 		 System.out.printf("Imc: %.2f \n", atleta.getImc());
 		 System.out.println("=========TREINO=========");
 		 for(int n = 0; n < listaExercicio.length; n++) {
@@ -47,8 +48,9 @@ public class Ficha {
 		}
 	}
 	// TODO: Metodo que tem por finalidade calcular o indice de massa corporal do aluno.
-	public void calcularImc() {
-		this.atleta.setImc(atleta.getPeso()/(atleta.getAltura()*atleta.getAltura()));
+	private double calcularImc() {
+		double resultado = this.atleta.getPeso()/(this.atleta.getAltura()*this.atleta.getAltura());
+		return resultado;
 
 	}
 	 
