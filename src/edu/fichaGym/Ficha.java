@@ -1,11 +1,12 @@
 package edu.fichaGym;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ficha {
 	 private Professor personal;
 	 private Aluno atleta;
-	 private Exercicio[] listaExercicio;
+	 private ArrayList<Exercicio> listaExercicio;
 	 
 	 
 	 //TODO: Metodo criado para imprimir as informações do aluno, professor e do treino.
@@ -20,31 +21,35 @@ public class Ficha {
 		 atleta.setImc(calcularImc());
 		 System.out.printf("Imc: %.2f \n", atleta.getImc());
 		 System.out.println("=========TREINO=========");
-		 for(int n = 0; n < listaExercicio.length; n++) {
-			 System.out.println("-----"+listaExercicio[n].getNomeExercicio()+"-----");
-			 System.out.println("Numero de series: "+listaExercicio[n].getNumeroSeries());
-			 System.out.println("Numero de repetições: "+listaExercicio[n].getNumeroRepeticao());
+		 for(Exercicio exercicio: listaExercicio) {
+			 System.out.println("----" + exercicio.getNomeExercicio()+"----");
+			 System.out.println("Numero de series: " + exercicio.getNumeroSeries());
+			 System.out.println("Numero de repetições: " + exercicio.getNumeroRepeticao());
 		 }
 	 }
 	// TODO: Metodo criado para armazena o nome, numero de series e numero de repetições de cada exercicio
 	public void passarTreino() {
-		Scanner sca = new Scanner(System.in);
-		System.out.println("Insira a quantidade de exercicios: ");
-		int quantidadeExercicio = sca.nextInt();
-		this.listaExercicio = new Exercicio[quantidadeExercicio];
-		
-		for(int n = 0; n < listaExercicio.length; n++) {
-			listaExercicio[n] = new Exercicio();
+		try (Scanner sca = new Scanner(System.in)) {
+			System.out.println("Insira a quantidade de exercicios: ");
+			int quantidade = sca.nextInt();
 			
-			System.out.println("Nome do exercicio: ");
-			listaExercicio[n].setNomeExercicio(sca.next());
+			this.listaExercicio = new ArrayList<Exercicio>();
 			
-			System.out.println("Numero de series: ");
-			listaExercicio[n].setNumeroSeries(sca.nextInt());
-			
-			System.out.println("Numero de repeticão: ");
-			listaExercicio[n].setNumeroRepeticao(sca.nextInt());
-			
+			for(int n = 0; n < quantidade ; n++) {
+				// Metodo nextLine implementado para consumir a linha anterior
+				sca.nextLine();
+				System.out.println("Nome: ");
+				String nome = sca.nextLine();
+				
+				System.out.println("Series: ");
+				int series = sca.nextInt();
+				
+				System.out.println("Repetições: ");
+				int repeticao = sca.nextInt();
+				
+				listaExercicio.add(n, new Exercicio(nome,series,repeticao));
+				
+			}
 		}
 	}
 	// TODO: Metodo que tem por finalidade calcular o indice de massa corporal do aluno.
@@ -66,12 +71,12 @@ public class Ficha {
 	public void setAtleta(Aluno atleta) {
 		this.atleta = atleta;
 	}
-	public Exercicio[] getListaExercicio() {
+	public ArrayList<Exercicio> getListaExercicio() {
 		return listaExercicio;
 	}
-	public void setListaExercicio(Exercicio[] listaExercicio) {
+	public void setListaExercicio(ArrayList<Exercicio> listaExercicio) {
 		this.listaExercicio = listaExercicio;
 	}
-	 
+	
 	 
 }
